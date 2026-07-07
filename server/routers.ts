@@ -75,18 +75,31 @@ export const appRouter = router({
           .map(m => `${m.role === "user" ? "User" : "Agent (" + m.agentType + ")"}: ${m.content}`)
           .join("\n");
 
-        const aiResponse = await generateMultiAgentResponse(input.message, intents, context, conversationHistory);
+        const isEscalation = shouldEscalate(primaryIntent as AgentType, input.message);
+        let aiResponse = "";
+        let finalIntent = primaryIntent;
+
+        if (isEscalation) {
+          aiResponse = "I understand you are frustrated. I have escalated this ticket immediately to a human manager who will assist you shortly.";
+          finalIntent = "Complaint";
+          await db.createEscalation(
+            input.conversationId,
+            `Auto-escalated due to critical keywords`,
+            `User message: ${input.message.substring(0, 200)}`
+          );
+        } else {
+          aiResponse = await generateMultiAgentResponse(input.message, intents, context, conversationHistory);
+        }
+        
         const responseTime = Date.now() - startTime;
 
-        await db.addMessage(input.conversationId, "assistant", aiResponse, primaryIntent);
+        await db.addMessage(input.conversationId, "assistant", aiResponse, finalIntent);
         const messages = await db.getMessagesByConversationId(input.conversationId);
-        await db.recordAnalyticsMetric(input.conversationId, primaryIntent, agents, responseTime, messages.length);
-
-        await checkAndCreateEscalation(input.conversationId, primaryIntent, input.message);
+        await db.recordAnalyticsMetric(input.conversationId, finalIntent, agents, responseTime, messages.length);
 
         return {
           message: aiResponse,
-          intent: primaryIntent,
+          intent: finalIntent,
           agents,
           responseTime,
         };
@@ -185,11 +198,11 @@ async function detectIntent(message: string): Promise<string> {
   if (lowerMessage.match(/\b(error|bug|crash|issue|problem|fix|support|help|technical)\b/)) {
     return "Technical";
   }
+  if (lowerMessage.match(/\b(complaint|unhappy|disappointed|bad|poor|terrible|angry|garbage|manager|sue)\b/)) {
+    return "Complaint";
+  }
   if (lowerMessage.match(/\b(feature|product|spec|capability|what|how|information)\b/)) {
     return "Product";
-  }
-  if (lowerMessage.match(/\b(complaint|unhappy|disappointed|bad|poor|terrible|angry)\b/)) {
-    return "Complaint";
   }
   
   return "FAQ";

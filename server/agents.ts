@@ -127,15 +127,17 @@ export async function generateAgentResponse(
 }
 
 export function shouldEscalate(agentType: AgentType, userMessage: string): boolean {
+  const globalKeywords = ["manager", "sue", "lawsuit", "angry", "furious", "garbage", "lawyer", "unacceptable", "terrible", "worst", "never again"];
+  
   const escalationKeywords: Record<AgentType, string[]> = {
     Billing: ["refund denied", "fraud", "dispute", "unauthorized", "urgent"],
     Technical: ["critical", "down", "broken", "emergency", "data loss"],
     Product: [],
-    Complaint: ["unacceptable", "terrible", "worst", "never again", "lawsuit"],
+    Complaint: [],
     FAQ: ["urgent", "emergency", "critical"],
   };
 
-  const keywords = escalationKeywords[agentType] || [];
+  const keywords = [...globalKeywords, ...(escalationKeywords[agentType] || [])];
   const lowerMessage = userMessage.toLowerCase();
 
   return keywords.some(keyword => lowerMessage.includes(keyword));
