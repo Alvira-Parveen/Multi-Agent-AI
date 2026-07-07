@@ -195,7 +195,7 @@ async function detectIntent(message: string): Promise<string> {
   if (lowerMessage.match(/\b(payment|invoice|refund|subscription|billing|charge|price)\b/)) {
     return "Billing";
   }
-  if (lowerMessage.match(/\b(error|bug|crash|issue|problem|fix|support|help|technical)\b/)) {
+  if (lowerMessage.match(/\b(error|bug|crash|issue|problem|fix|technical)\b/)) {
     return "Technical";
   }
   if (lowerMessage.match(/\b(complaint|unhappy|disappointed|bad|poor|terrible|angry|garbage|manager|sue)\b/)) {

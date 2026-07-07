@@ -140,5 +140,8 @@ export function shouldEscalate(agentType: AgentType, userMessage: string): boole
   const keywords = [...globalKeywords, ...(escalationKeywords[agentType] || [])];
   const lowerMessage = userMessage.toLowerCase();
 
-  return keywords.some(keyword => lowerMessage.includes(keyword));
+  return keywords.some(keyword => {
+    const regex = new RegExp(`\\b${keyword}\\b`, 'i');
+    return regex.test(lowerMessage);
+  });
 }
