@@ -1,0 +1,227 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1300 900" width="100%" height="100%" style="background-color: #0b0f19; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+  <defs>
+    <!-- Grid Pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.5"/>
+    </pattern>
+    
+    <!-- Glow Filters -->
+    <filter id="glowRed" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="glowBlue" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+
+    <!-- Gradients -->
+    <linearGradient id="gradRed" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff385c" />
+      <stop offset="100%" stop-color="#be123c" />
+    </linearGradient>
+    <linearGradient id="gradBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#1d4ed8" />
+    </linearGradient>
+    <linearGradient id="gradGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#047857" />
+    </linearGradient>
+    <linearGradient id="gradDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <linearGradient id="gradPurple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#5b21b6" />
+    </linearGradient>
+
+    <!-- Arrow Markers -->
+    <marker id="arrowGray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#64748b" />
+    </marker>
+    <marker id="arrowRed" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#ff385c" />
+    </marker>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#3b82f6" />
+    </marker>
+    <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#10b981" />
+    </marker>
+  </defs>
+
+  <!-- Background Grid -->
+  <rect width="100%" height="100%" fill="url(#grid)" />
+
+  <!-- Title -->
+  <text x="650" y="60" font-size="36" font-weight="800" text-anchor="middle" fill="#ffffff" letter-spacing="2">SUPPORTFLOW: ENTERPRISE MULTI-AGENT ARCHITECTURE</text>
+  <text x="650" y="90" font-size="16" font-weight="400" text-anchor="middle" fill="#94a3b8">Advanced RAG Pipeline &amp; Dynamic Intent Orchestration Network</text>
+
+  <!-- ==================== TIER BOUNDARIES ==================== -->
+  
+  <!-- Presentation Layer -->
+  <rect x="40" y="140" width="280" height="680" rx="16" fill="#1e293b" fill-opacity="0.3" stroke="#334155" stroke-width="2" stroke-dasharray="10,5"/>
+  <text x="180" y="180" font-size="20" font-weight="700" text-anchor="middle" fill="#cbd5e1">1. PRESENTATION TIER</text>
+  <text x="180" y="200" font-size="12" font-weight="500" text-anchor="middle" fill="#64748b">Next.js 14 / React / Tailwind CSS</text>
+
+  <!-- Gateway & Orchestration Layer -->
+  <rect x="360" y="140" width="260" height="680" rx="16" fill="#1e293b" fill-opacity="0.3" stroke="#334155" stroke-width="2" stroke-dasharray="10,5"/>
+  <text x="490" y="180" font-size="20" font-weight="700" text-anchor="middle" fill="#cbd5e1">2. ORCHESTRATION TIER</text>
+  <text x="490" y="200" font-size="12" font-weight="500" text-anchor="middle" fill="#64748b">Node.js / tRPC / State Management</text>
+
+  <!-- AI Cognitive Layer -->
+  <rect x="660" y="140" width="300" height="680" rx="16" fill="#1e293b" fill-opacity="0.3" stroke="#ff385c" stroke-width="2" stroke-opacity="0.5"/>
+  <text x="810" y="180" font-size="20" font-weight="700" text-anchor="middle" fill="#ff385c">3. MULTI-AGENT COGNITIVE ENGINE</text>
+  <text x="810" y="200" font-size="12" font-weight="500" text-anchor="middle" fill="#f43f5e">Google Gemini 3.1 Pro LLM</text>
+
+  <!-- Storage & Ingestion Layer -->
+  <rect x="1000" y="140" width="260" height="680" rx="16" fill="#1e293b" fill-opacity="0.3" stroke="#10b981" stroke-width="2" stroke-opacity="0.5"/>
+  <text x="1130" y="180" font-size="20" font-weight="700" text-anchor="middle" fill="#10b981">4. DATA &amp; STORAGE TIER</text>
+  <text x="1130" y="200" font-size="12" font-weight="500" text-anchor="middle" fill="#34d399">MySQL / Drizzle ORM / Vector Space</text>
+
+  <!-- ==================== NODES ==================== -->
+
+  <!-- Tier 1 Nodes (Presentation) -->
+  <g filter="url(#shadow)">
+    <!-- Customer Chat -->
+    <rect x="80" y="260" width="200" height="80" rx="8" fill="url(#gradDark)" stroke="#475569" stroke-width="1.5"/>
+    <text x="180" y="295" font-size="16" font-weight="bold" fill="#ffffff" text-anchor="middle">Customer Chat UI</text>
+    <text x="180" y="315" font-size="12" fill="#94a3b8" text-anchor="middle">Markdown &amp; Real-time Streams</text>
+
+    <!-- Admin Dashboard -->
+    <rect x="80" y="500" width="200" height="80" rx="8" fill="url(#gradDark)" stroke="#475569" stroke-width="1.5"/>
+    <text x="180" y="535" font-size="16" font-weight="bold" fill="#ffffff" text-anchor="middle">Analytics Dashboard</text>
+    <text x="180" y="555" font-size="12" fill="#94a3b8" text-anchor="middle">Recharts Visualizations</text>
+
+    <!-- Human Escalation Center -->
+    <rect x="80" y="680" width="200" height="80" rx="8" fill="url(#gradDark)" stroke="#ef4444" stroke-width="2"/>
+    <text x="180" y="715" font-size="16" font-weight="bold" fill="#f87171" text-anchor="middle">Human Supervisor Desk</text>
+    <text x="180" y="735" font-size="12" fill="#94a3b8" text-anchor="middle">High-Priority Ticket Queue</text>
+  </g>
+
+  <!-- Tier 2 Nodes (Orchestration) -->
+  <g filter="url(#shadow)">
+    <!-- API Gateway -->
+    <rect x="390" y="260" width="200" height="80" rx="8" fill="url(#gradBlue)" stroke="#60a5fa" stroke-width="2" filter="url(#glowBlue)"/>
+    <text x="490" y="295" font-size="16" font-weight="bold" fill="#ffffff" text-anchor="middle">tRPC Secure Gateway</text>
+    <text x="490" y="315" font-size="12" fill="#bfdbfe" text-anchor="middle">Zod Request Validation</text>
+
+    <!-- Session Controller -->
+    <rect x="390" y="400" width="200" height="80" rx="8" fill="url(#gradDark)" stroke="#475569" stroke-width="1.5"/>
+    <text x="490" y="435" font-size="16" font-weight="bold" fill="#ffffff" text-anchor="middle">Session Manager</text>
+    <text x="490" y="455" font-size="12" fill="#94a3b8" text-anchor="middle">Memory &amp; Context Retention</text>
+  </g>
+
+  <!-- Tier 3 Nodes (Cognitive Engine) -->
+  <g filter="url(#shadow)">
+    <!-- Intent Agent -->
+    <rect x="710" y="260" width="200" height="80" rx="8" fill="url(#gradRed)" stroke="#f43f5e" stroke-width="2" filter="url(#glowRed)"/>
+    <text x="810" y="295" font-size="16" font-weight="bold" fill="#ffffff" text-anchor="middle">Intent Router Agent</text>
+    <text x="810" y="315" font-size="12" fill="#fecdd3" text-anchor="middle">Few-Shot Zero-Hallucination</text>
+    
+    <!-- Classification Engine Block inside Agent -->
+    <rect x="795" y="340" width="30" height="30" rx="15" fill="#334155" stroke="#94a3b8" stroke-width="2"/>
+    <text x="810" y="360" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">?</text>
+
+    <!-- RAG Retriever Agent -->
+    <rect x="710" y="440" width="200" height="80" rx="8" fill="url(#gradPurple)" stroke="#a78bfa" stroke-width="2"/>
+    <text x="810" y="475" font-size="16" font-weight="bold" fill="#ffffff" text-anchor="middle">RAG Context Retriever</text>
+    <text x="810" y="495" font-size="12" fill="#ddd6fe" text-anchor="middle">Embedding &amp; Similarity Engine</text>
+
+    <!-- Resolution Synthesizer -->
+    <rect x="710" y="620" width="200" height="80" rx="8" fill="url(#gradRed)" stroke="#f43f5e" stroke-width="2"/>
+    <text x="810" y="655" font-size="16" font-weight="bold" fill="#ffffff" text-anchor="middle">Resolution Synthesizer</text>
+    <text x="810" y="675" font-size="12" fill="#fecdd3" text-anchor="middle">Factual Response Generator</text>
+  </g>
+
+  <!-- Tier 4 Nodes (Data & Storage) -->
+  <g filter="url(#shadow)">
+    <!-- Vector Database -->
+    <path d="M 1030 460 Q 1130 430 1230 460 L 1230 520 Q 1130 550 1030 520 Z" fill="url(#gradGreen)" stroke="#34d399" stroke-width="2"/>
+    <path d="M 1030 460 Q 1130 490 1230 460" fill="none" stroke="#059669" stroke-width="2"/>
+    <text x="1130" y="485" font-size="16" font-weight="bold" fill="#ffffff" text-anchor="middle">MySQL Vector DB</text>
+    <text x="1130" y="505" font-size="12" fill="#d1fae5" text-anchor="middle">Drizzle: knowledge_chunks</text>
+    
+    <!-- SQL Relational DB -->
+    <path d="M 1030 540 Q 1130 510 1230 540 L 1230 600 Q 1130 630 1030 600 Z" fill="url(#gradDark)" stroke="#475569" stroke-width="2"/>
+    <path d="M 1030 540 Q 1130 570 1230 540" fill="none" stroke="#334155" stroke-width="2"/>
+    <text x="1130" y="565" font-size="16" font-weight="bold" fill="#ffffff" text-anchor="middle">Relational Schema</text>
+    <text x="1130" y="585" font-size="12" fill="#94a3b8" text-anchor="middle">Users, Logs, Conversations</text>
+
+    <!-- Ingestion Pipeline -->
+    <rect x="1030" y="260" width="200" height="80" rx="8" fill="url(#gradDark)" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="4,4"/>
+    <text x="1130" y="295" font-size="16" font-weight="bold" fill="#fbbf24" text-anchor="middle">Batch Ingestion Node</text>
+    <text x="1130" y="315" font-size="12" fill="#fef3c7" text-anchor="middle">PDF Parser &amp; Text Chunker</text>
+
+    <!-- Raw PDFs -->
+    <path d="M 1090 700 L 1150 700 L 1170 720 L 1170 770 L 1090 770 Z" fill="#e2e8f0" stroke="#94a3b8" stroke-width="2"/>
+    <path d="M 1150 700 L 1150 720 L 1170 720" fill="none" stroke="#94a3b8" stroke-width="2"/>
+    <text x="1130" y="745" font-size="14" font-weight="bold" fill="#334155" text-anchor="middle">Raw PDFs</text>
+  </g>
+
+  <!-- ==================== FLOW CONNECTIONS (ARROWS) ==================== -->
+
+  <!-- UI to API -->
+  <line x1="280" y1="300" x2="380" y2="300" stroke="#60a5fa" stroke-width="3" marker-end="url(#arrowBlue)" />
+  <text x="330" y="290" font-size="12" fill="#60a5fa" font-weight="600" text-anchor="middle">Query</text>
+
+  <!-- API to Session -->
+  <line x1="490" y1="340" x2="490" y2="390" stroke="#64748b" stroke-width="2" marker-end="url(#arrowGray)" />
+
+  <!-- Session to DB Logs -->
+  <path d="M 590 440 L 980 440 L 980 570 L 1020 570" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrowGray)" />
+  
+  <!-- API to Intent Router -->
+  <line x1="590" y1="300" x2="700" y2="300" stroke="#ff385c" stroke-width="3" marker-end="url(#arrowRed)" />
+  <text x="645" y="290" font-size="12" fill="#ff385c" font-weight="600" text-anchor="middle">Classify</text>
+
+  <!-- Intent Logic Branching -->
+  <line x1="810" y1="340" x2="810" y2="370" stroke="#f43f5e" stroke-width="2" />
+  
+  <!-- Branch 1: Escalate -->
+  <path d="M 795 355 L 340 355 L 340 720 L 290 720" fill="none" stroke="#ef4444" stroke-width="3" stroke-dasharray="8,4" marker-end="url(#arrowRed)" />
+  <rect x="360" y="345" width="100" height="20" rx="4" fill="#ef4444"/>
+  <text x="410" y="359" font-size="10" fill="#ffffff" font-weight="bold" text-anchor="middle">If Anger/Complexity</text>
+  <text x="315" y="710" font-size="12" fill="#ef4444" font-weight="bold" text-anchor="middle">ESCALATE</text>
+
+  <!-- Branch 2: RAG Flow -->
+  <line x1="810" y1="370" x2="810" y2="430" stroke="#a78bfa" stroke-width="3" marker-end="url(#arrowGray)" />
+  <text x="860" y="410" font-size="12" fill="#a78bfa" font-weight="600" text-anchor="middle">If Tech/Policy Info</text>
+
+  <!-- RAG Retriever to DB -->
+  <line x1="910" y1="480" x2="1010" y2="480" stroke="#10b981" stroke-width="3" marker-end="url(#arrowGreen)" />
+  <text x="960" y="470" font-size="12" fill="#10b981" font-weight="600" text-anchor="middle">Cosine Dist.</text>
+
+  <!-- DB returns Context to Retriever -->
+  <line x1="1010" y1="500" x2="910" y2="500" stroke="#10b981" stroke-width="3" stroke-dasharray="6,4" marker-end="url(#arrowGreen)" />
+  <text x="960" y="515" font-size="12" fill="#10b981" font-weight="600" text-anchor="middle">Top 3 Chunks</text>
+
+  <!-- Retriever to Synthesizer -->
+  <line x1="810" y1="520" x2="810" y2="610" stroke="#a78bfa" stroke-width="3" marker-end="url(#arrowGray)" />
+  <rect x="750" y="555" width="120" height="20" rx="4" fill="#6d28d9"/>
+  <text x="810" y="569" font-size="11" fill="#ffffff" font-weight="bold" text-anchor="middle">Inject Context Window</text>
+
+  <!-- Synthesizer to Gateway -->
+  <path d="M 710 660 L 510 660 L 510 350" fill="none" stroke="#60a5fa" stroke-width="3" marker-end="url(#arrowBlue)" />
+  <text x="600" y="650" font-size="12" fill="#60a5fa" font-weight="600" text-anchor="middle">Resolved Answer</text>
+
+  <!-- Gateway to Client -->
+  <path d="M 460 350 L 460 380 L 320 380 L 320 310 L 290 310" fill="none" stroke="#60a5fa" stroke-width="3" marker-end="url(#arrowBlue)" />
+
+  <!-- Data Ingestion Flow (Background Task) -->
+  <line x1="1130" y1="690" x2="1130" y2="350" stroke="#fbbf24" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowGray)" />
+  <text x="1140" y="660" font-size="11" fill="#fbbf24" font-style="italic">Read Raw PDFs</text>
+  
+  <line x1="1130" y1="350" x2="1130" y2="450" stroke="#10b981" stroke-width="3" marker-end="url(#arrowGreen)" />
+  <text x="1140" y="390" font-size="12" fill="#10b981" font-weight="600">Embed &amp; Upsert</text>
+  
+  <!-- Analytics flow -->
+  <path d="M 180 500 L 180 430 L 380 430" fill="none" stroke="#64748b" stroke-width="2" stroke-dasharray="4,4" marker-end="url(#arrowGray)" />
+  <text x="280" y="420" font-size="11" fill="#94a3b8">Fetch Session Metrics</text>
+
+</svg>

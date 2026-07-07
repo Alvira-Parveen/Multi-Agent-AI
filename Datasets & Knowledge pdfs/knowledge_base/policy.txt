@@ -1,0 +1,1 @@
+"Acme Corp return policy: Returns are accepted within 30 days.Contact returns@acme.com for shipping labels."

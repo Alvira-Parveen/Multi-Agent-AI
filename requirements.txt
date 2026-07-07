@@ -1,0 +1,31 @@
+# SupportFlow - System Requirements
+
+# This project is primarily built on a Node.js ecosystem using package.json.
+# However, the following core technologies, Python scripts, and API dependencies 
+# are required to fully run the Multi-Agent environment and Knowledge Base ingestion.
+
+# --- Core System Requirements ---
+Node.js >= 18.0.0
+MySQL >= 8.0 (configured with Vector Support capabilities via Drizzle)
+
+# --- Python Dependencies (For Synthetic Dataset Generation) ---
+# Used exclusively if you need to re-run the PDF dataset generator script.
+reportlab==4.1.0
+
+# --- Core NPM Packages (Refer to package.json for full tree) ---
+next==14.2.3                  # Frontend Framework & Server API
+react==18.3.1                 # UI Library
+react-dom==18.3.1             
+drizzle-orm==0.30.10          # Database ORM (Vector storage for RAG)
+mysql2==3.9.7                 # MySQL Driver
+pdf-parse==1.1.1              # Knowledge Base text extraction
+@google/generative-ai==0.11.1 # Gemini 3.1 Pro API (Agents & Embeddings)
+@trpc/server==11.0.0-rc.366   # End-to-end typesafe API
+@trpc/client==11.0.0-rc.366
+zod==3.23.8                   # Schema Validation
+
+# --- Development & Build Tools ---
+typescript==5.4.5
+tailwindcss==3.4.3
+drizzle-kit==0.21.2           # Database Migrations & Studio
+tsx==4.9.3                    # Script Runner (used for ingest_kb.ts)

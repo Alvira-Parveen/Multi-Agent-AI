@@ -1,0 +1,175 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1000" width="100%" height="100%" style="background-color: #0d1117; font-family: 'Inter', -apple-system, sans-serif;">
+  <defs>
+    <!-- Background Grid -->
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#21262d" stroke-width="1"/>
+    </pattern>
+
+    <!-- Gradients -->
+    <linearGradient id="gradOrange" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff7b72" />
+      <stop offset="100%" stop-color="#d23d33" />
+    </linearGradient>
+    <linearGradient id="gradBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#79c0ff" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+    <linearGradient id="gradGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#56d364" />
+      <stop offset="100%" stop-color="#2ea043" />
+    </linearGradient>
+    <linearGradient id="gradPurple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d2a8ff" />
+      <stop offset="100%" stop-color="#a371f7" />
+    </linearGradient>
+    <linearGradient id="gradDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#161b22" />
+      <stop offset="100%" stop-color="#010409" />
+    </linearGradient>
+
+    <!-- Filters -->
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000000" flood-opacity="0.8"/>
+    </filter>
+    <filter id="glowOrange">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <!-- Arrows -->
+    <marker id="arrowGray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#8b949e" />
+    </marker>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#79c0ff" />
+    </marker>
+    <marker id="arrowOrange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#ff7b72" />
+    </marker>
+    <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#56d364" />
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#grid)" />
+
+  <!-- Titles -->
+  <text x="700" y="50" font-size="32" font-weight="900" text-anchor="middle" fill="#c9d1d9" letter-spacing="2">MULTI-AGENT ORCHESTRATION &amp; RAG PIPELINE</text>
+  <text x="700" y="80" font-size="16" font-weight="400" text-anchor="middle" fill="#8b949e">Detailed Component Flow for SupportFlow (Gemini 3.1 Pro)</text>
+
+  <!-- ==========================================
+       TOP SECTION: 6.4 RAG PIPELINE IMPLEMENTATION (OFFLINE)
+       ========================================== -->
+  <rect x="50" y="120" width="1300" height="180" rx="12" fill="#161b22" stroke="#30363d" stroke-width="2" stroke-dasharray="10,5"/>
+  <text x="90" y="160" font-size="20" font-weight="bold" fill="#79c0ff">6.4 RAG Pipeline Implementation (Offline Data Ingestion)</text>
+
+  <!-- Document Ingestion -->
+  <rect x="90" y="190" width="220" height="80" rx="8" fill="url(#gradDark)" stroke="#8b949e" stroke-width="2" filter="url(#shadow)"/>
+  <text x="200" y="225" font-size="16" font-weight="bold" fill="#c9d1d9" text-anchor="middle">1. Document Ingestion</text>
+  <text x="200" y="245" font-size="12" fill="#8b949e" text-anchor="middle">pdf-parse (8 Raw PDFs)</text>
+
+  <!-- Chunking -->
+  <rect x="390" y="190" width="220" height="80" rx="8" fill="url(#gradDark)" stroke="#8b949e" stroke-width="2" filter="url(#shadow)"/>
+  <text x="500" y="225" font-size="16" font-weight="bold" fill="#c9d1d9" text-anchor="middle">2. Semantic Chunking</text>
+  <text x="500" y="245" font-size="12" fill="#8b949e" text-anchor="middle">Overlapping Segments</text>
+
+  <!-- Embedding Generation -->
+  <rect x="690" y="190" width="220" height="80" rx="8" fill="url(#gradPurple)" filter="url(#shadow)"/>
+  <text x="800" y="225" font-size="16" font-weight="bold" fill="#ffffff" text-anchor="middle">3. Embedding Gen</text>
+  <text x="800" y="245" font-size="12" fill="#f0f6fc" text-anchor="middle">text-embedding-004 (768-D)</text>
+
+  <!-- Vector Storage -->
+  <rect x="990" y="190" width="300" height="80" rx="8" fill="url(#gradGreen)" filter="url(#shadow)"/>
+  <text x="1140" y="225" font-size="16" font-weight="bold" fill="#ffffff" text-anchor="middle">4. Vector Storage (MySQL)</text>
+  <text x="1140" y="245" font-size="12" fill="#f0f6fc" text-anchor="middle">Drizzle ORM Vector Column</text>
+
+  <!-- Offline Arrows -->
+  <line x1="310" y1="230" x2="380" y2="230" stroke="#8b949e" stroke-width="3" marker-end="url(#arrowGray)"/>
+  <line x1="610" y1="230" x2="680" y2="230" stroke="#8b949e" stroke-width="3" marker-end="url(#arrowGray)"/>
+  <line x1="910" y1="230" x2="980" y2="230" stroke="#d2a8ff" stroke-width="3" marker-end="url(#arrowGray)"/>
+
+
+  <!-- ==========================================
+       BOTTOM SECTION: MULTI-AGENT RUNTIME FLOW (ONLINE)
+       ========================================== -->
+  <rect x="50" y="340" width="1300" height="600" rx="12" fill="#161b22" stroke="#30363d" stroke-width="2" stroke-dasharray="10,5"/>
+  <text x="90" y="380" font-size="20" font-weight="bold" fill="#ff7b72">Live Multi-Agent Orchestration Flow</text>
+
+  <!-- INPUT -->
+  <rect x="90" y="440" width="180" height="60" rx="30" fill="url(#gradDark)" stroke="#79c0ff" stroke-width="2" filter="url(#shadow)"/>
+  <text x="180" y="475" font-size="16" font-weight="bold" fill="#79c0ff" text-anchor="middle">User Query</text>
+
+  <!-- 6.1 Intent Router Agent -->
+  <rect x="360" y="420" width="280" height="140" rx="8" fill="url(#gradDark)" stroke="#d23d33" stroke-width="3" filter="url(#shadow)"/>
+  <rect x="360" y="420" width="280" height="35" rx="8" fill="#d23d33"/>
+  <text x="500" y="443" font-size="16" font-weight="bold" fill="#ffffff" text-anchor="middle">6.1 The Intent Router Agent</text>
+  <text x="500" y="480" font-size="14" font-weight="bold" fill="#c9d1d9" text-anchor="middle">Few-Shot Prompting</text>
+  <text x="500" y="500" font-size="12" fill="#8b949e" text-anchor="middle">Categorizes: RAG_QUERY, ESCALATE</text>
+  <rect x="380" y="520" width="240" height="25" rx="4" fill="#161b22" stroke="#ff7b72" stroke-width="1"/>
+  <text x="500" y="537" font-size="11" fill="#ff7b72" font-weight="bold" text-anchor="middle">Safety: Triggers on Profanity/Threats</text>
+
+  <!-- Human Dashboard (Escalate Branch) -->
+  <rect x="360" y="700" width="280" height="80" rx="8" fill="url(#gradDark)" stroke="#ff7b72" stroke-width="2" stroke-dasharray="6,4" filter="url(#shadow)"/>
+  <text x="500" y="735" font-size="16" font-weight="bold" fill="#ff7b72" text-anchor="middle">Human Dashboard</text>
+  <text x="500" y="755" font-size="12" fill="#8b949e" text-anchor="middle">Bypass AI Entirely</text>
+
+  <!-- 6.2 RAG Context Retriever -->
+  <rect x="730" y="420" width="280" height="140" rx="8" fill="url(#gradDark)" stroke="#a371f7" stroke-width="3" filter="url(#shadow)"/>
+  <rect x="730" y="420" width="280" height="35" rx="8" fill="#a371f7"/>
+  <text x="870" y="443" font-size="16" font-weight="bold" fill="#ffffff" text-anchor="middle">6.2 RAG Context Retriever</text>
+  <text x="870" y="480" font-size="14" font-weight="bold" fill="#c9d1d9" text-anchor="middle">Embedding Generation</text>
+  <text x="870" y="500" font-size="12" fill="#8b949e" text-anchor="middle">Converts Query to 768-D Vector</text>
+  <text x="870" y="525" font-size="14" font-weight="bold" fill="#d2a8ff" text-anchor="middle">Cosine Distance SQL Search</text>
+  <text x="870" y="545" font-size="12" fill="#8b949e" text-anchor="middle">Returns Top 3 Similar Chunks</text>
+
+  <!-- MySQL DB -->
+  <rect x="1100" y="380" width="180" height="80" rx="8" fill="url(#gradGreen)" filter="url(#shadow)"/>
+  <text x="1190" y="415" font-size="16" font-weight="bold" fill="#ffffff" text-anchor="middle">MySQL Vector DB</text>
+  <text x="1190" y="435" font-size="12" fill="#f0f6fc" text-anchor="middle">knowledge_chunks Table</text>
+
+  <!-- 6.3 Resolution Synthesizer -->
+  <rect x="1100" y="550" width="250" height="150" rx="8" fill="url(#gradDark)" stroke="#79c0ff" stroke-width="3" filter="url(#shadow)"/>
+  <rect x="1100" y="550" width="250" height="35" rx="8" fill="#3b82f6"/>
+  <text x="1225" y="573" font-size="15" font-weight="bold" fill="#ffffff" text-anchor="middle">6.3 Resolution Synthesizer</text>
+  <text x="1225" y="610" font-size="13" font-weight="bold" fill="#c9d1d9" text-anchor="middle">Constraint Prompting</text>
+  <text x="1225" y="630" font-size="11" fill="#8b949e" text-anchor="middle">1. Orig Query + 2. Top 3 Chunks</text>
+  <rect x="1115" y="645" width="220" height="40" rx="4" fill="#0d1117" stroke="#79c0ff" stroke-width="1"/>
+  <text x="1225" y="660" font-size="10" fill="#79c0ff" font-style="italic" text-anchor="middle">"Answer USING ONLY context."</text>
+  <text x="1225" y="675" font-size="10" fill="#79c0ff" font-style="italic" text-anchor="middle">"Zero Hallucination logic."</text>
+
+  <!-- Final Output -->
+  <rect x="1135" y="780" width="180" height="60" rx="30" fill="url(#gradDark)" stroke="#56d364" stroke-width="2" filter="url(#shadow)"/>
+  <text x="1225" y="815" font-size="16" font-weight="bold" fill="#56d364" text-anchor="middle">Final Response</text>
+
+
+  <!-- ==================== LIVE FLOW ARROWS ==================== -->
+  
+  <!-- Query to Intent -->
+  <line x1="270" y1="470" x2="350" y2="470" stroke="#79c0ff" stroke-width="3" marker-end="url(#arrowBlue)"/>
+
+  <!-- Intent to Escalate -->
+  <line x1="500" y1="560" x2="500" y2="690" stroke="#ff7b72" stroke-width="3" stroke-dasharray="6,4" marker-end="url(#arrowOrange)"/>
+  <text x="510" y="610" font-size="12" font-weight="bold" fill="#ff7b72">ActionType = ESCALATE</text>
+  
+  <!-- Intent to Retriever -->
+  <line x1="640" y1="490" x2="720" y2="490" stroke="#d23d33" stroke-width="3" marker-end="url(#arrowOrange)"/>
+  <text x="680" y="475" font-size="12" font-weight="bold" fill="#ff7b72" text-anchor="middle">ActionType =</text>
+  <text x="680" y="495" font-size="12" font-weight="bold" fill="#ff7b72" text-anchor="middle">RAG_QUERY</text>
+
+  <!-- Retriever to DB (Search) -->
+  <path d="M 870 420 L 870 390 L 1090 390" fill="none" stroke="#a371f7" stroke-width="3" marker-end="url(#arrowGray)"/>
+  <text x="980" y="380" font-size="12" font-weight="bold" fill="#d2a8ff" text-anchor="middle">Vector Query</text>
+
+  <!-- DB to Retriever (Return) -->
+  <path d="M 1100 440 L 1010 440 L 1010 460 L 1010 520" fill="none" stroke="#56d364" stroke-width="3" marker-end="url(#arrowGreen)"/>
+  <text x="1055" y="430" font-size="12" font-weight="bold" fill="#56d364" text-anchor="middle">Return Top 3 Chunks</text>
+
+  <!-- Retriever to Synthesizer -->
+  <path d="M 1010 540 L 1050 540 L 1050 580 L 1090 580" fill="none" stroke="#a371f7" stroke-width="3" marker-end="url(#arrowGray)"/>
+  <text x="1050" y="570" font-size="12" font-weight="bold" fill="#d2a8ff" text-anchor="middle">Context Injection</text>
+
+  <!-- Synthesizer to Output -->
+  <line x1="1225" y1="700" x2="1225" y2="770" stroke="#79c0ff" stroke-width="3" marker-end="url(#arrowBlue)"/>
+
+</svg>

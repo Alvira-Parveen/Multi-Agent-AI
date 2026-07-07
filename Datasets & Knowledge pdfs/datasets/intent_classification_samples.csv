@@ -1,0 +1,21 @@
+query,intent
+"My screen is cracked, how do I get it fixed?",Hardware_Issue
+"I cannot log into my account, it says wrong password.",Account_Access
+"When will my order arrive? The tracking hasn't updated.",Shipping_Inquiry
+"I want to return the headphones I bought last week.",Return_Request
+"Is there a discount code for students?",Billing_Inquiry
+"The installation guide for the smart TV is confusing.",Technical_Support
+"How long is the warranty on the new laptops?",Product_Information
+"I was charged twice for my subscription.",Billing_Inquiry
+"The app keeps crashing when I open the settings menu.",Technical_Support
+"Where can I find the user manual for the microwave?",FAQ
+"My delivery was supposed to be here yesterday.",Escalation
+"I am very upset, the customer service representative was rude.",Complaint
+"Can I upgrade my current plan to premium?",Account_Access
+"The Bluetooth won't connect to my phone anymore.",Technical_Support
+"Do you ship internationally?",Shipping_Inquiry
+"I need a refund, the product is defective.",Return_Request
+"What are the specifications of the new smartphone?",Product_Information
+"How do I reset my router?",Technical_Support
+"Are there any physical stores near me?",FAQ
+"I demand to speak to a manager immediately.",Escalation

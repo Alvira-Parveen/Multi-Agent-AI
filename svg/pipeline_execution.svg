@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1000" width="100%" height="100%" style="background-color: #0b0f19; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+  <defs>
+    <!-- Background Grid -->
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#1e293b" stroke-width="0.5"/>
+    </pattern>
+
+    <!-- Gradients -->
+    <linearGradient id="gradOrange" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#d97706" />
+    </linearGradient>
+    <linearGradient id="gradBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#1d4ed8" />
+    </linearGradient>
+    <linearGradient id="gradPurple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#6d28d9" />
+    </linearGradient>
+    <linearGradient id="gradDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <linearGradient id="gradGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#047857" />
+    </linearGradient>
+
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+
+    <marker id="arrowGray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#64748b" />
+    </marker>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#3b82f6" />
+    </marker>
+    <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#10b981" />
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#grid)" />
+
+  <text x="600" y="60" font-size="34" font-weight="900" text-anchor="middle" fill="#ffffff" letter-spacing="1">IMPLEMENTATION DETAILS &amp; PIPELINE EXECUTION</text>
+
+  <!-- =========================================================================
+       10.1 KNOWLEDGE BASE INGESTION PIPELINE (TOP HALF)
+       ========================================================================= -->
+  <rect x="50" y="110" width="1100" height="260" rx="16" fill="#1e293b" fill-opacity="0.3" stroke="#334155" stroke-width="2" stroke-dasharray="10,5"/>
+  <text x="80" y="150" font-size="20" font-weight="bold" fill="#f59e0b">10.1 Knowledge Base Ingestion Pipeline</text>
+  <text x="80" y="170" font-size="14" fill="#94a3b8">scripts/ingest_kb.ts batch-processing workflow</text>
+
+  <!-- 1. Extraction -->
+  <rect x="80" y="220" width="220" height="100" rx="8" fill="url(#gradDark)" stroke="#475569" stroke-width="2" filter="url(#shadow)"/>
+  <circle cx="110" cy="245" r="12" fill="#f59e0b"/>
+  <text x="110" y="250" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle">1</text>
+  <text x="190" y="250" font-size="16" font-weight="bold" fill="#ffffff" text-anchor="middle">Extraction</text>
+  <text x="190" y="275" font-size="12" fill="#cbd5e1" text-anchor="middle">Iterates `knowledge_base`</text>
+  <text x="190" y="295" font-size="12" fill="#94a3b8" text-anchor="middle">`pdf-parse` string extraction</text>
+
+  <!-- 2. Semantic Chunking -->
+  <rect x="440" y="220" width="220" height="100" rx="8" fill="url(#gradDark)" stroke="#475569" stroke-width="2" filter="url(#shadow)"/>
+  <circle cx="470" cy="245" r="12" fill="#f59e0b"/>
+  <text x="470" y="250" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle">2</text>
+  <text x="550" y="250" font-size="16" font-weight="bold" fill="#ffffff" text-anchor="middle">Semantic Chunking</text>
+  <text x="550" y="275" font-size="12" fill="#cbd5e1" text-anchor="middle">~1000 characters limit</text>
+  <text x="550" y="295" font-size="12" fill="#94a3b8" text-anchor="middle">200-char overlap preservation</text>
+
+  <!-- 3. Vectorization & Upsertion -->
+  <rect x="800" y="220" width="220" height="100" rx="8" fill="url(#gradDark)" stroke="#475569" stroke-width="2" filter="url(#shadow)"/>
+  <circle cx="830" cy="245" r="12" fill="#f59e0b"/>
+  <text x="830" y="250" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle">3</text>
+  <text x="910" y="250" font-size="16" font-weight="bold" fill="#ffffff" text-anchor="middle">Vectorization</text>
+  <text x="910" y="275" font-size="12" fill="#cbd5e1" text-anchor="middle">Gemini API Embedding</text>
+  <text x="910" y="295" font-size="12" fill="#94a3b8" text-anchor="middle">Bulk Upsert to MySQL</text>
+
+  <!-- Pipeline Arrows -->
+  <line x1="300" y1="270" x2="430" y2="270" stroke="#64748b" stroke-width="3" marker-end="url(#arrowGray)"/>
+  <line x1="660" y1="270" x2="790" y2="270" stroke="#64748b" stroke-width="3" marker-end="url(#arrowGray)"/>
+
+  <!-- =========================================================================
+       10.2 CHAT EXECUTION FLOW (BOTTOM HALF)
+       ========================================================================= -->
+  <rect x="50" y="420" width="1100" height="520" rx="16" fill="#1e293b" fill-opacity="0.3" stroke="#334155" stroke-width="2" stroke-dasharray="10,5"/>
+  <text x="80" y="460" font-size="20" font-weight="bold" fill="#3b82f6">10.2 Chat Execution Flow</text>
+  <text x="80" y="480" font-size="14" fill="#94a3b8">The 7-step data cycle from Client to AI and back</text>
+
+  <!-- Step 1: Next.js Client -->
+  <rect x="80" y="520" width="250" height="70" rx="8" fill="url(#gradDark)" stroke="#3b82f6" stroke-width="2" filter="url(#shadow)"/>
+  <text x="205" y="550" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">1. User Submits Query</text>
+  <text x="205" y="570" font-size="12" fill="#94a3b8" text-anchor="middle">via Next.js React Client</text>
+
+  <!-- Step 2: tRPC -->
+  <rect x="420" y="520" width="250" height="70" rx="8" fill="url(#gradBlue)" filter="url(#shadow)"/>
+  <text x="545" y="550" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">2. tRPC Route Invoked</text>
+  <text x="545" y="570" font-size="12" fill="#bfdbfe" text-anchor="middle">`chat.sendMessage`</text>
+
+  <!-- Step 3: MySQL Messages Save -->
+  <rect x="760" y="520" width="250" height="70" rx="8" fill="url(#gradGreen)" filter="url(#shadow)"/>
+  <text x="885" y="550" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">3. Initial DB Save</text>
+  <text x="885" y="570" font-size="12" fill="#d1fae5" text-anchor="middle">Saved to MySQL `messages` table</text>
+
+  <!-- Step 4: Intent Router -->
+  <rect x="760" y="660" width="250" height="70" rx="8" fill="url(#gradPurple)" filter="url(#shadow)"/>
+  <text x="885" y="690" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">4. Intent Assessment</text>
+  <text x="885" y="710" font-size="12" fill="#e9d5ff" text-anchor="middle">Router analyzes the query</text>
+
+  <!-- Step 5: RAG Retriever -->
+  <rect x="420" y="660" width="250" height="70" rx="8" fill="url(#gradDark)" stroke="#8b5cf6" stroke-width="2" filter="url(#shadow)"/>
+  <text x="545" y="690" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">5. Context Retrieval</text>
+  <text x="545" y="710" font-size="12" fill="#94a3b8" text-anchor="middle">If RAG_QUERY, fetch vectors</text>
+
+  <!-- Step 6: Resolution Agent -->
+  <rect x="80" y="660" width="250" height="70" rx="8" fill="url(#gradPurple)" filter="url(#shadow)"/>
+  <text x="205" y="690" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">6. Markdown Generation</text>
+  <text x="205" y="710" font-size="12" fill="#e9d5ff" text-anchor="middle">Resolution Agent synthesizes</text>
+
+  <!-- Step 7: Final DB Save & Stream -->
+  <rect x="80" y="800" width="400" height="90" rx="8" fill="url(#gradDark)" stroke="#10b981" stroke-width="2" filter="url(#shadow)"/>
+  <text x="280" y="840" font-size="16" font-weight="bold" fill="#ffffff" text-anchor="middle">7. Final DB Save &amp; Stream Delivery</text>
+  <text x="280" y="865" font-size="13" fill="#cbd5e1" text-anchor="middle">Backend saves AI reply to MySQL and streams result to React UI</text>
+
+  <!-- Flow Arrows for 10.2 -->
+  <line x1="330" y1="555" x2="410" y2="555" stroke="#3b82f6" stroke-width="3" marker-end="url(#arrowBlue)"/>
+  <line x1="670" y1="555" x2="750" y2="555" stroke="#64748b" stroke-width="3" marker-end="url(#arrowGray)"/>
+  
+  <line x1="885" y1="590" x2="885" y2="650" stroke="#64748b" stroke-width="3" marker-end="url(#arrowGray)"/>
+  <line x1="750" y1="695" x2="680" y2="695" stroke="#64748b" stroke-width="3" marker-end="url(#arrowGray)"/>
+  <line x1="410" y1="695" x2="340" y2="695" stroke="#64748b" stroke-width="3" marker-end="url(#arrowGray)"/>
+  
+  <line x1="205" y1="730" x2="205" y2="790" stroke="#10b981" stroke-width="3" marker-end="url(#arrowGreen)"/>
+
+</svg>

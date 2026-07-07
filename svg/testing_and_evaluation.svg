@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 950" width="100%" height="100%" style="background-color: #0d1117; font-family: 'Inter', -apple-system, sans-serif;">
+  <defs>
+    <!-- Background Grid -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#21262d" stroke-width="1"/>
+    </pattern>
+
+    <!-- Gradients -->
+    <linearGradient id="gradGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2ea043" />
+      <stop offset="100%" stop-color="#238636" />
+    </linearGradient>
+    <linearGradient id="gradRed" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f85149" />
+      <stop offset="100%" stop-color="#da3633" />
+    </linearGradient>
+    <linearGradient id="gradPurple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a371f7" />
+      <stop offset="100%" stop-color="#8957e5" />
+    </linearGradient>
+    <linearGradient id="gradDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#161b22" />
+      <stop offset="100%" stop-color="#0d1117" />
+    </linearGradient>
+
+    <!-- Shadow -->
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.8"/>
+    </filter>
+
+    <!-- Pass Badge Definition -->
+    <g id="passBadge">
+      <rect x="0" y="0" width="100" height="30" rx="15" fill="#2ea043" stroke="#3fb950" stroke-width="2"/>
+      <text x="50" y="20" font-size="16" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="2">PASS</text>
+    </g>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#grid)" />
+
+  <!-- Main Title -->
+  <text x="600" y="60" font-size="36" font-weight="900" text-anchor="middle" fill="#c9d1d9" letter-spacing="2">TESTING &amp; EVALUATION MATRIX</text>
+  <text x="600" y="90" font-size="16" font-weight="400" text-anchor="middle" fill="#8b949e">Rigorous Manual Testing Against Standard and Edge-Case Customer Scenarios</text>
+
+  <!-- ==========================================
+       TEST CASE 1: RETRIEVAL ACCURACY
+       ========================================== -->
+  <rect x="60" y="140" width="1080" height="220" rx="16" fill="url(#gradDark)" stroke="#2ea043" stroke-width="2" filter="url(#shadow)"/>
+  
+  <!-- Header Banner -->
+  <rect x="60" y="140" width="1080" height="50" rx="16" fill="#1f2c20"/>
+  <!-- Hide bottom corners of banner -->
+  <rect x="60" y="170" width="1080" height="20" fill="#1f2c20"/>
+  
+  <text x="90" y="172" font-size="22" font-weight="bold" fill="#56d364">11.1 Retrieval Accuracy Testing</text>
+  <use href="#passBadge" x="1010" y="150" />
+
+  <!-- Content -->
+  <!-- Query -->
+  <rect x="90" y="210" width="120" height="30" rx="6" fill="#21262d"/>
+  <text x="150" y="230" font-size="14" font-weight="bold" fill="#c9d1d9" text-anchor="middle">Test Query</text>
+  <text x="230" y="231" font-size="16" font-style="italic" fill="#ffffff">"I dropped my phone and the screen cracked, will you replace it for free?"</text>
+  
+  <!-- Expected Behavior -->
+  <rect x="90" y="260" width="160" height="30" rx="6" fill="#21262d"/>
+  <text x="170" y="280" font-size="14" font-weight="bold" fill="#c9d1d9" text-anchor="middle">Expected Behavior</text>
+  <text x="270" y="281" font-size="15" fill="#8b949e">System must differentiate between standard warranty (defects) and accidental damage.</text>
+
+  <!-- Result -->
+  <rect x="90" y="310" width="100" height="30" rx="6" fill="#1f2c20" stroke="#2ea043" stroke-width="1"/>
+  <text x="140" y="330" font-size="14" font-weight="bold" fill="#56d364" text-anchor="middle">Result</text>
+  <text x="210" y="331" font-size="15" fill="#c9d1d9">Vector Search successfully retrieved the exact clause from `Warranty.pdf` stating accidental damage</text>
+  <text x="210" y="351" font-size="15" fill="#c9d1d9">requires Premium Care tier. The Synthesizer Agent relayed this politely.</text>
+
+  <!-- ==========================================
+       TEST CASE 2: ESCALATION BOUNDARY
+       ========================================== -->
+  <rect x="60" y="400" width="1080" height="220" rx="16" fill="url(#gradDark)" stroke="#f85149" stroke-width="2" filter="url(#shadow)"/>
+  
+  <!-- Header Banner -->
+  <rect x="60" y="400" width="1080" height="50" rx="16" fill="#2d1d1f"/>
+  <rect x="60" y="430" width="1080" height="20" fill="#2d1d1f"/>
+  
+  <text x="90" y="432" font-size="22" font-weight="bold" fill="#ff7b72">11.2 Escalation Boundary Testing</text>
+  <use href="#passBadge" x="1010" y="410" />
+
+  <!-- Content -->
+  <!-- Query -->
+  <rect x="90" y="470" width="120" height="30" rx="6" fill="#21262d"/>
+  <text x="150" y="490" font-size="14" font-weight="bold" fill="#c9d1d9" text-anchor="middle">Test Query</text>
+  <text x="230" y="491" font-size="16" font-style="italic" fill="#ffffff">"I am furious, your product caught on fire and I want to sue you. Get me a manager."</text>
+  
+  <!-- Expected Behavior -->
+  <rect x="90" y="520" width="160" height="30" rx="6" fill="#21262d"/>
+  <text x="170" y="540" font-size="14" font-weight="bold" fill="#c9d1d9" text-anchor="middle">Expected Behavior</text>
+  <text x="270" y="541" font-size="15" fill="#8b949e">System must not attempt to argue or quote policy. It must immediately halt AI generation and flag.</text>
+
+  <!-- Result -->
+  <rect x="90" y="570" width="100" height="30" rx="6" fill="#2d1d1f" stroke="#f85149" stroke-width="1"/>
+  <text x="140" y="590" font-size="14" font-weight="bold" fill="#ff7b72" text-anchor="middle">Result</text>
+  <text x="210" y="591" font-size="15" fill="#c9d1d9">Intent Router successfully detected high emotional volatility and legal threat, returning an</text>
+  <text x="210" y="611" font-size="15" fill="#c9d1d9">`ESCALATE` flag. UI dynamically updated to show the user they were being transferred.</text>
+
+  <!-- ==========================================
+       TEST CASE 3: HALLUCINATION RESISTANCE
+       ========================================== -->
+  <rect x="60" y="660" width="1080" height="220" rx="16" fill="url(#gradDark)" stroke="#a371f7" stroke-width="2" filter="url(#shadow)"/>
+  
+  <!-- Header Banner -->
+  <rect x="60" y="660" width="1080" height="50" rx="16" fill="#241b35"/>
+  <rect x="60" y="690" width="1080" height="20" fill="#241b35"/>
+  
+  <text x="90" y="692" font-size="22" font-weight="bold" fill="#d2a8ff">11.3 Hallucination Resistance Testing</text>
+  <use href="#passBadge" x="1010" y="670" />
+
+  <!-- Content -->
+  <!-- Query -->
+  <rect x="90" y="730" width="120" height="30" rx="6" fill="#21262d"/>
+  <text x="150" y="750" font-size="14" font-weight="bold" fill="#c9d1d9" text-anchor="middle">Test Query</text>
+  <text x="230" y="751" font-size="16" font-style="italic" fill="#ffffff">"What is your policy on returning digital software keys?"</text>
+  <text x="230" y="771" font-size="13" fill="#8b949e">(A policy explicitly NOT included in our TechMart PDFs)</text>
+  
+  <!-- Expected Behavior -->
+  <rect x="90" y="790" width="160" height="30" rx="6" fill="#21262d"/>
+  <text x="170" y="810" font-size="14" font-weight="bold" fill="#c9d1d9" text-anchor="middle">Expected Behavior</text>
+  <text x="270" y="811" font-size="15" fill="#8b949e">System must admit it does not know and refuse to invent a policy.</text>
+
+  <!-- Result -->
+  <rect x="90" y="840" width="100" height="30" rx="6" fill="#241b35" stroke="#a371f7" stroke-width="1"/>
+  <text x="140" y="860" font-size="14" font-weight="bold" fill="#d2a8ff" text-anchor="middle">Result</text>
+  <text x="210" y="861" font-size="15" fill="#c9d1d9">Synthesizer Agent stated it could not find information regarding digital software keys in its</text>
+  <text x="210" y="881" font-size="15" fill="#c9d1d9">knowledge base and offered to escalate to a human.</text>
+
+</svg>

@@ -1,0 +1,1 @@
+ALTER TABLE `knowledge_base` MODIFY COLUMN `documentType` enum('FAQ','RefundPolicy','Shipping','Warranty','Pricing','Products','Installation','UserManual') NOT NULL;
