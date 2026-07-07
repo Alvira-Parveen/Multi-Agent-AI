@@ -22,14 +22,26 @@ The system uses a Multi-Agent architecture to route queries, retrieve proprietar
 
 ## 📸 Screenshots
 
+### Platform Interface 
+![Platform](screenshots/platform.png)
+
+### Agent & Guide 
+![Agent & Guide](screenshots/agent & guide.png)
+
+### Homepage Interface 
+![Homepage](screenshots/homepage.png)
+
 ### Customer Chat Interface
 ![Chat](screenshots/chat.png)
 
-### Human Escalation Dashboard
+### Dashboard
 ![Dashboard](screenshots/dashboard.png)
 
 ### RAG Knowledge Ingestion
 ![Ingestion](screenshots/ingestion.png)
+
+### Human Escalation Dashboard
+![Dashboard](screenshots/escalations.png)
 
 ---
 
@@ -72,6 +84,7 @@ The system uses a Multi-Agent architecture to route queries, retrieve proprietar
 
 ## 🧠 How It Works
 
+```text
 User Query via Next.js Client
             ↓
 tRPC Secure API Route
@@ -85,6 +98,7 @@ MySQL Vector Database Search (Cosine Similarity)
 Resolution Synthesizer Agent
             ↓
 Instant Markdown Response to Client
+```
 
 ---
 
