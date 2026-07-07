@@ -23,25 +23,25 @@ The system uses a Multi-Agent architecture to route queries, retrieve proprietar
 ## 📸 Screenshots
 
 ### Platform Interface 
-![Platform](Screenshots/platform.png)
+![Platform](screenshots/platform.png)
 
 ### Agent & Guide 
-![Agent](Screenshots/agent&guide.png)
+![Agent & Guide](screenshots/agent & guide.png)
 
 ### Homepage Interface 
-![Homepage](Screenshots/homepage.png)
+![Homepage](screenshots/homepage.png)
 
 ### Customer Chat Interface
-![Chat](Screenshots/chat.png)
+![Chat](screenshots/chat.png)
 
 ### Dashboard
-![Dashboard](Screenshots/dashboard.png)
+![Dashboard](screenshots/dashboard.png)
 
 ### RAG Knowledge Ingestion
-![Ingestion](Screenshots/ingestion.png)
+![Ingestion](screenshots/ingestion.png)
 
 ### Human Escalation Dashboard
-![Dashboard](Screenshots/escalations.png)
+![Dashboard](screenshots/escalations.png)
 
 ---
 
