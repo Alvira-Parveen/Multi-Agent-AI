@@ -26,7 +26,7 @@ The system uses a Multi-Agent architecture to route queries, retrieve proprietar
 ![Platform](Screenshots/platform.png)
 
 ### Agent & Guide 
-![Agent&Guide](Screenshots/agent&guide.png)
+![Agent](Screenshots/agent.png)
 
 ### Homepage Interface 
 ![Homepage](Screenshots/homepage.png)
