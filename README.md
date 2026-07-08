@@ -285,16 +285,16 @@ Once the app is running, try the following scenarios in the Chat interface to se
 
 ---
 
-## 🍀mLearning Outcomes
+## 🍀 Learning Outcomes
 After completing this project, I was able to understand :
-• Multi-Agent Systems
-• Large Language Models (LLMs)
-• Retrieval-Augmented Genera;on (RAG)
-• Embedding Models
-• Vector Databases
-• REST APIs
-• Full Stack Development
-• Cloud Deployment
+- Multi-Agent Systems
+- Large Language Models (LLMs)
+- Retrieval-Augmented Genera;on (RAG)
+- Embedding Models
+- Vector Databases
+- REST APIs
+- Full Stack Development
+- Cloud Deployment
 
 ---
 
