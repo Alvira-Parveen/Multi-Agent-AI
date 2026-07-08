@@ -1,4 +1,4 @@
-# ⚙️ SupportFlow : Enterprise Multi-Agent Support Platform
+# ⚙️ SupportFlow : Enterprise Multi-Agent AI Customer Support Assistant Platform using RAG and LLMs
 
 An advanced, Multi-Agent Customer Support platform built to demonstrate how advanced Large Language Models (LLMs) and Retrieval-Augmented Generation (RAG) can revolutionize customer service. 
 
@@ -19,6 +19,28 @@ The system uses a Multi-Agent architecture to route queries, retrieve proprietar
 🌐 **Live Demo :**  https://multi-agent-ai-yrbu.onrender.com 
 
 --- 
+
+## Problem Statement ❓
+
+Companies receive thousands of customer queries every day. A single chatbot often struggles to
+answer questions from diﬀerent domains such as billing, technical support, product informa;on, and
+complaints.
+
+---
+
+## Project Objective ✨
+Design and develop a web-based AI-powered customer support assistant capable of answering
+customer queries using multiple specialized AI agents.
+
+Unlike a normal chatbot, this system should :
+• Understand customer intent
+• Route the request to the correct AI agent
+• Retrieve relevant company informa;on
+• Generate accurate responses
+• Maintain conversa;on history
+• Escalate unresolved issues
+
+---
 
 ## 📸 Screenshots
 
@@ -255,6 +277,24 @@ Once the app is running, try the following scenarios in the Chat interface to se
 - Integration with Zendesk/Salesforce
 - Advanced Analytics Export
 - Custom Fine-Tuned Embedding Models
+- Sentiment analysis for routing frustrated customers
+- Human-agent handoﬀ
+- Email and WhatsApp integration
+- AI-generated conversation summaries
+- Customer satisfaction feedback and analytics
+
+---
+
+## 🍀mLearning Outcomes
+After completing this project, I was able to understand :
+• Multi-Agent Systems
+• Large Language Models (LLMs)
+• Retrieval-Augmented Genera;on (RAG)
+• Embedding Models
+• Vector Databases
+• REST APIs
+• Full Stack Development
+• Cloud Deployment
 
 ---
 
